@@ -5,6 +5,8 @@
 [libs]
 
 [lints]
+all=warn
+unsafe-getters-setters=off
 
 [options]
 
