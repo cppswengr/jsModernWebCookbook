@@ -1,3 +1,6 @@
 .idea/
 node_modules/
 package-lock.json
+bookSource/
+ch2/flow-typed/
+ch2/node_modules/
