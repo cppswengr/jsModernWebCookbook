@@ -1,5 +1,7 @@
 .idea/
-node_modules/
+**/node_modules/
+**/flow-typed/
+**/out/
 package-lock.json
 bookSource/
 ch2/flow-typed/
