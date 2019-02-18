@@ -28,3 +28,4 @@ exports.addR = addR;
 exports.subR = subR;
 exports.multR = multR;
 exports.divR = divR;
+exports.changeSign = changeSign;
