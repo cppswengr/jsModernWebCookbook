@@ -15,7 +15,7 @@ http.createServer((req, res) => {
 
         req.on("end", () => processRequest(req, res, body));
     } else {
-        return processRequest(req, res, "");
+        return processRequest(req, res,"");
     }
 }).listen(8080, "localhost");
 
@@ -43,5 +43,5 @@ function processRequest(req, res, body) {
      */
 
     res.writeHead(200, "OK");
-    res.end('FINISHED WITH THE $(req.method) REQUST');
+    res.end(`FINISHED WITH THE ${req.method} REQUEST`);
 }
