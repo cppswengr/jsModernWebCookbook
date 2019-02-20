@@ -10,11 +10,11 @@ http.createServer(function(request, response) {
 
   response.writeHead(200, {
     "Content-Type": "application/zip",
-    "Content-disposition": "attachment; filename=churches.gz"
+    "Content-disposition": "attachment; filename=data_analysis_python.gz"
   });
 
   const inputStream = fs.createReadStream(
-      "/home/fkereki/Documents/CHURCHES - Digital Taxonomy.pdf"
+      "/home/hittinemup/documents/eBooks/python/DATA_ANALYSIS_WITH_PYTHON.pdf"
   );
 
   const gzipStream = zlib.createGzip();

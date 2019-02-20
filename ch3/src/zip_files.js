@@ -5,13 +5,13 @@ const zlib = require("zlib");
 const fs = require("fs");
 
 const inputStream = fs.createReadStream(
-    "home/fkereki/Documents/CHURCHES = Digital Taxonomy.pdf"
+    "home/hittinemup/documents/eBooks/python/DATA_ANALYSIS_WITH_PYTHON.pdf"
 );
 
 const gzipStream = zlib.createGzip();
 
 const outputStream = fs.createWriteStream(
-    "home/fkereki/Documents/CHURCHES.gz"
+    "home/hittinemup/documents/eBooks/python/data_analysis_python.gz"
 );
 
 inputStream.pipe(gziptStream).pipe(outputStream);
