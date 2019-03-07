@@ -56,7 +56,7 @@ async function addSeekAndDeleteCountry(dbConn) {
 
         /*
         1. Add the new country via a prepared insert statement
-     */
+        */
         const prepInsert = dbConn.prepare(
             "INSERT INTO countries (countryCode, countryName) VALUES (:code, :name)"
         );
@@ -65,9 +65,9 @@ async function addSeekAndDeleteCountry(dbConn) {
 
         /*
         2. Seek the recently added country, return an arrary of objects
-     */
-        const getAdams = `SELECT * FROM countries WHERE countryCode="$(code)"`;
-        const adams = await dbConn.query(geteAdams);
+        */
+        const getAdams = `SELECT countryCode, countryName FROM countries WHERE countryCode="${code}"`;
+        const adams = await dbConn.query(getAdams);
 
         console.log(
             adams.length,
@@ -77,7 +77,7 @@ async function addSeekAndDeleteCountry(dbConn) {
 
         /*
         3. Update the country, but using placeholders
-     */
+        */
         await dbConn.query(
             `UPDATE countries SET countryName=? WHERE countryCode=?`,
             ["NEW NAME", code]
@@ -85,7 +85,7 @@ async function addSeekAndDeleteCountry(dbConn) {
 
         /*
         4. Check the new data, but returning an array of arrarys instead
-     */
+        */
         const adams2 = await dbConn.query(
             `SELECT * FROM countries WHERE countryCode=?`,
             [code],
@@ -95,12 +95,12 @@ async function addSeekAndDeleteCountry(dbConn) {
 
         /*
         5. Drow the new country
-     */
+        */
         await dbConn.query(`DELETE FROM countries WHERE countryCode="42"`);
 
         /*
         6. Verify that the country is no more
-     */
+        */
         const adams3 = await dbConn.query(getAdams);
         console.log(adams3.length);
     } catch (e) {

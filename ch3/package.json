@@ -7,6 +7,7 @@
     "build": "flow-remove-types src/ -d out/",
     "buildWithMaps": "flow-remove-types src/ -d out/ --pretty --sourcemaps",
     "start": "npm run build && node out/doroundmath.js",
+    "start-db": "npm run build && node out/dbaccess.js",
     "nodemon": "nodemon --watch src --delay 1 --exec npm start",
     "prepublish": "npm run build",
     "buildNode": "flow-r move-types src/ -d out/",
