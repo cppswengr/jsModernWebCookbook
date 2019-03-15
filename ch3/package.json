@@ -8,6 +8,8 @@
     "buildWithMaps": "flow-remove-types src/ -d out/ --pretty --sourcemaps",
     "start": "npm run build && node out/doroundmath.js",
     "start-db": "npm run build && node out/dbaccess.js",
+    "start-process-exec": "npm run build && node out/process_exec.js",
+    "start-process-spawn": "npm run build && node out/process_spawn.js",
     "nodemon": "nodemon --watch src --delay 1 --exec npm start",
     "prepublish": "npm run build",
     "buildNode": "flow-r move-types src/ -d out/",
